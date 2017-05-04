@@ -1,11 +1,13 @@
 <p id="notice"><%= notice %></p>
-<%= render partial: "alex" %>
-<%= render @products %>
+
+<%= render @cart %>
+
 <h2>Your Cart</h2>
 <table>
-  <%= render @cart %>
-  <%= render @cart.line_items  %>
-  
+  <% if @cart %>
+    <%= render @cart %>
+  <% end %>
+    
   <tr>
   <td><%= line_item.quantity %>&times;</td>
   <td><%= line_item.product.title %></td>
